@@ -30,7 +30,59 @@ Note: You need to use a 32-bit Python interpreter to dump 32-bit executables.
 
 ### Download
 
-Procurar por [lief-project](https://github.com/lief-project/LIEF/releases?page=2) 
+# 🛠️ Unpacking Executáveis Themida com `unlicense`
+
+Ferramenta: [`unlicense`](https://github.com/ergrelet/unlicense)  
+Autor: [@ergrelet](https://github.com/ergrelet)
+
+> Este tutorial mostra como usar o `unlicense` para desempacotar (dump) executáveis protegidos por Themida/WinLicense, com foco em arquivos **x86 (32-bit)** como `Ragexe.exe`.
+
+⚠️ **Atenção:** o binário é executado durante o processo, então use em uma **máquina virtual segura**.
+
+---
+
+## 🧩 Pré-requisitos
+
+- Windows
+- Python **3.9 (32-bit)** instalado
+- Ambiente virtual com dependências corretas
+
+### Instalar Python 3.9 (32-bit)
+
+Baixe o instalador:
+- 🔗 https://www.python.org/ftp/python/3.9.13/python-3.9.13.exe
+
+Durante a instalação:
+- ✅ Marque "Add Python to PATH"
+- ✅ Selecione "Customize installation" e siga com a instalação padrão
+
+---
+
+## ⚙️ Setup do Ambiente
+
+Abra o terminal e execute:
+
+
+# Crie e ative o ambiente virtual
+```bash
+py -3.9-32 -m venv unlicense_env
+unlicense_env\Scripts\activate
+```
+# Baixe e instale o LIEF 0.13.1 compatível com Python 3.9 32-bit
+[lief-project](https://github.com/lief-project/LIEF/releases?page=2) procure por lief-0.13.1-cp39-cp39-win32.whl
+```bash
+pip install lief-0.13.1-cp39-cp39-win32.whl
+```
+# Instale o unlicense diretamente do GitHub
+```bash
+pip install git+https://github.com/ergrelet/unlicense.git
+```
+
+# Exemplo de comando
+```bash
+python -m unlicense SeuEXE.exe  --verbose=True --pause_on_oep=True
+```
+
 
 You can either download the PyInstaller-generated executables from the "Releases"
 section or fetch the project with `git` and install it with `pip`: 
