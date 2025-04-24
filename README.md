@@ -31,7 +31,7 @@ Note: You need to use a 32-bit Python interpreter to dump 32-bit executables.
 ### Download
 
 You can either download the PyInstaller-generated executables from the "Releases"
-section or fetch the project with `git` and install it with `pip`:
+section or fetch the project with `git` and install it with `pip`: [lief](https://github.com/lief-project/LIEF/releases/download/0.13.1/lief-0.13.1-cp39-cp39-win_amd64.whl)
 ```
 pip install git+https://github.com/ergrelet/unlicense.git
 ```
